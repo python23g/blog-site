@@ -1,1 +1,21 @@
-<h1>Blogs Page</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blogs - My Blog{% endblock %}
+{% block style_block %}
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %}">
+{% endblock style_block %}
+
+{% block content %}
+    <h1>Latest Blogs</h1>
+
+    <ul>
+        {% for blog in blogs %}
+            <li>
+                <h2><a href="{% url 'blogs_detail' blog.id %}">{{ blog.title }}</a></h2>
+                <p>Published on {{ blog.published.month }} {{ blog.published.day }}, {{ blog.published.year }}</p>
+                <p>{{ blog.content }}...</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

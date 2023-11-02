@@ -1,7 +1,16 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load static %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}Home - My Blog{% endblock %}
+
+{% block style_block %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock style_block %}
 
 {% block content %}
-    <h1>Home Page</h1>
-{% endblock content %}
+    <h1>Welcome to My Blog</h1>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac justo vitae arcu facilisis ultrices.
+        Nunc consectetur, dui a venenatis ultricies, justo purus hendrerit risus, quis dapibus arcu augue non libero.
+    </p>
+{% endblock %}
